@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html style="height: 100%"  data-ng-app="appModule">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" 
+ href="vendor/rateit/rateit.css" />
+
+ <link rel="stylesheet" 
+ href="vendor/awesome-rating/awesomeRating.css" />
+ 
+  <link rel="stylesheet" 
+ href="vendor/font-awesome/css/font-awesome.css" />
+ 
+  <link rel="stylesheet" 
+ href="vendor/angular-input-stars/angular-input-stars.css" /> 
+<style>
+
+.my-col-width-30{
+float:left;width:30%;
+}
+
+.my-col-height-100px{
+clear: both; height: 100px
+}
+
+</style> 
+
+<link rel="stylesheet" href="student/stars.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+		 <link rel="stylesheet" href="https://rawgithub.com/McNull/angular-block-ui/v0.0.7/angular-block-ui.min.css" />
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+
+	<script type="text/javascript" src="vendor/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="vendor/angular-resource/angular-resource.js"></script>
+	
+	    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+	    <script type="text/javascript" src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script>
+	
+	<script  type="text/javascript" src="https://rawgithub.com/McNull/angular-block-ui/v0.0.7/angular-block-ui.min.js"></script>
+	<script type="text/javascript" src="vendor/awesome-rating/awesomeRating.angular.js"></script>
+<script type="text/javascript" src="vendor/angular-input-stars/angular-input-stars.js"></script>
+
+
+
+
+<title>Insert title here</title>
+ 
+   <script type="text/javascript" src="reader.js"></script> 
+  <script type="text/javascript" src="appConfig/appConfig.js"></script>
+   <script type="text/javascript" src="student/studentService.js"></script>
+  <script type="text/javascript" src="student/studentController.js"></script>
+   
+  
+</head>
+<body style="width: 100%;height: 90%;">
+<h2>My New Page</h2>
+<div style="width: 100%;height: 100%; border: black">
+<hr><hr>
+<div id="sideView" style="width: 20%;height: 100%; border: solid;color: green; float: left">
+<div><a href="#">Home Page</a></div>
+<hr>
+<div><a href="#/student">Student Page</a></div>
+<hr>
+<div><a href="#/admin">Admin Page</a></div>
+
+</div>
+<div style="margin: 10px">
+ 
+</div>
+
+</div>
+
+<div style="width: 78%; height: 90%; float: right" ng-view="">
+</div>
+</div>
+<script type="text/javascript">
+var appModule = angular.module('appModule',['ngRoute']);
+
+//Add dependency of ng route.
+
+appModule.config(function($routeProvider) {
+	$routeProvider.when('/student', {
+		controller : "studentController",
+		templateUrl : "student/student.html"
+	}).when('/admin', {
+		controller : "adminController",
+		templateUrl : "admin/admin.html"
+	}).otherwise({
+		redirectTo : '/student'
+	});
+}); 
+
+var studentController = appModule.controller('studentController', function($scope) {
+	
+});
+
+var adminController = appModule.controller('adminController', function($scope) {
+	
+});
+</script>
+</body>
+</html> 

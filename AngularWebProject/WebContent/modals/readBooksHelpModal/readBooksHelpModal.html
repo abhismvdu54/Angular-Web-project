@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+  <head>
+  <style type="text/css">
+  
+  img{
+  width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
+    float: left
+  }
+
+  .test .modal-footer{
+  border:none;
+  border-top: none;
+  }
+  .rightIcon{
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin-top: -20px;
+  margin-right: -20px
+  }
+   .rightIcon:HOVER{
+  cursor: pointer;
+  }
+  </style>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script>
+    <script src="readBooksHelpModal.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+<div ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="readBookHelpContent.html">
+      
+        <div class="modal-body">
+<div class="rightIcon"> <img src="cancel.png" ng-click="closeModal()"></img> </div>
+
+  </div>
+           
+        </div>
+       
+<div class="test">
+<div class="modal-footer"></div>
+</div>
+
+    </script>
+
+    <!-- <button type="button" class="btn btn-default" ng-click="open()">Open me!</button> -->
+    <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
+   <!--  <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button> -->
+   <!--  <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button> -->
+    <!-- <div ng-show="selected">Selection from a modal: {{ selected }}</div> -->
+</div>
+  </body>
+</html>

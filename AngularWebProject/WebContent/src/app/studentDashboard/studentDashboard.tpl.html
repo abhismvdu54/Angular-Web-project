@@ -1,0 +1,43 @@
+<div id="wrapper">
+	<div class="studentPage">
+
+		<div class="header">
+			<div class="leftSection">
+				<div class="siteLogoSection">
+					<img alt="" src="assets/img/icon.png">
+				</div>
+				<div class="siteCaption">College Days</div>
+			</div>
+			<div class="rightSection-studentInfo">
+				<div class="editProfileSection">
+					<a href="#">edit Profile</a>
+				</div>
+				<div class="studentPicSection">
+					<img alt="" src="assets/img/bhabhi.jpg">
+				</div>
+				<div class="nameSection">Abhishek</div>
+			</div>
+		</div>
+		<div class="studentDashBoard">
+			<div class="dashBoardLink">
+				<div ui-sref="library"><a href="">Library</a></div>
+			</div>
+			<div class="dashBoardLink">
+				<a href="">Your Book Shelf</a>
+			</div>
+			<div class="dashBoardLink">
+				<a href="">Notes</a>
+			</div>
+			<div class="dashBoardLink">
+				<a href="">College DashBoard</a>
+			</div>
+			<div class="dashBoardLink">
+				<a href="">Sell/ Buy</a>
+			</div>
+		</div>
+		<!-- This will be the ui-view section... This will change according to the selection of tabs -->
+		<div style="width: 100%; height: 1024px;">
+		<div ui-view="studentPage"></div>
+		</div>
+	</div>
+	</div>

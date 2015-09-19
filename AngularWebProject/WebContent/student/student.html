@@ -1,0 +1,112 @@
+<div style="width: 100%;height: 100%; background-color: white">
+<h3 style="text-align: center">Student Page</h3>
+
+<!-- crousels in angular and bootstrap -->
+
+<!-- <div style="height: 50px; width: 100%">
+    <carousel interval="myInterval" no-wrap="noWrapSlides">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div> -->
+  
+
+
+<div style="padding-left: 20px">
+<!-- <input type="text" ng-model="readableBooks" ng-hide="true">
+<input type="text" ng-model="lendableBooks" ng-hide="true"> -->
+
+
+<div style="width: 100%; height: 10%">
+<input type="text" ng-model="searchBookText" ng-keyup="enterEvent($event)">
+<button ng-click="searchBooks()">Search Books</button>
+<hr><hr>
+</div>
+
+<!--  <div ng-repeat="record in testRecords">
+<div class="my-col-50">Test</div>
+<div>{{reord.name}}</div>
+</div>  -->
+<h4 style="text-align: center"> Readable Books</h4>
+ <table style="border: solid;color: grey; width: 100%; height: 100%">
+<thead><tr style="width: 100%"><th>(Cover)/ Title  </th></thead>
+<tbody>
+<tr ng-repeat="record in readableBooks" class="my-col-width-30">
+<td style="float: left; clear:both;">
+<img ng-if="record.cover_i"  src="http://covers.openlibrary.org/b/id/{{record.cover_i}}-M.jpg" >
+<img ng-if="!record.cover_i" src="http://covers.openlibrary.org/b/isbn/{{record.isbn[0]}}-M.jpg" >
+<!-- <img ng-if="!record.cover_i && !record.isbn[0]" src="/WEB-INF/images/no_image.jpg" > -->
+</td>
+<td style="float: left; clear:both; color: BLUE">ISBN: {{record.isbn[0]}}</td>
+<td ng-if="record.goodReadReviews" style="float: left; clear:both; color: green">
+
+<div awesome-rating="record.goodReadReviews.average_rating" awesome-rating-options="options"></div>
+{{record.goodReadReviews.average_rating}}
+		
+<!-- </div> -->
+<span style="color: cyan">/</span>
+<span style="color: green">{{record.goodReadReviews.work_ratings_count}}</span> 
+<span> People</span> 
+</td>
+
+
+<!-- <td style="float: left; clear:both; color: Green">
+<input-stars readonly ng-model="record.goodReadReviews.average_rating" max="5" ></input-stars>
+ </td> -->
+
+
+
+
+
+
+<td ng-if="!record.goodReadReviews" style="float: left; clear:both; color: green">GoodRead Rating : <span>NA</span> </td>
+<td style="float: left; clear:both; color: ">Title: {{record.title_suggest}}</td> 
+
+<td style="float: left; clear:both;"><a style="color:Green" href="{{record.readableObject.itemURL}}">Read BOOK</a></td> 
+<!-- </span> -->
+<!--  <td>{{record.has_fulltext}}</td> -->
+ </tr>
+
+</tbody>
+</table> 
+
+<hr><h4 style="text-align: center"> Borrowable Books</h4><hr>
+<table style="border: solid;color: grey; width: 100%; height: 100%">
+<thead><tr style="width: 100%"><th>(Cover)/ Title  </th></thead>
+<tbody>
+<tr ng-repeat="record in lendableBooks" class="my-col-width-30">
+<td style="float: left; clear:both;">
+<img ng-if="record.cover_i"  src="http://covers.openlibrary.org/b/id/{{record.cover_i}}-M.jpg" >
+<img ng-if="!record.cover_i" src="http://covers.openlibrary.org/b/isbn/{{record.isbn[0]}}-M.jpg" >
+
+</td>
+<td style="float: left; clear:both; color: Blue">ISBN: {{record.isbn[0]}}</td>
+<td style="float: left; clear:both; color: BLUE">Title: {{record.title_suggest}}</td> 
+
+<td style="float: left; clear:both; color: RED"><a href="{{record.readableObject.itemURL}}" style="color:RED">Borrow BOOK</a></td> 
+<!-- </span> -->
+<!--  <td>{{record.has_fulltext}}</td> -->
+ </tr>
+
+</tbody>
+</table> 
+
+
+   <!--  <carousel interval="myInterval" no-wrap="noWrapSlides">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel> -->
+  </div>
+  
+</div>
+</div>
